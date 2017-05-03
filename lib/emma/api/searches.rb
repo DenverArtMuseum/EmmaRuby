@@ -30,8 +30,8 @@ module Emma
       end
       
       # Get the members matching the search.
-      def get_members_of_search(id)
-        get("/searches/#{id}/members")
+      def get_members_of_search(id, params = {})
+        get("/searches/#{id}/members", params)
       end
     end
   end
