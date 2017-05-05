@@ -85,7 +85,13 @@ module Emma
       
       # Return parsed response from API Call
       def parse(response)
-        return JSON.parse('[' + response.body + ']').first
+        begin
+          result = JSON.parse(response.body)
+        rescue
+          result = false
+        end
+        
+        return result
       end
     
   end
